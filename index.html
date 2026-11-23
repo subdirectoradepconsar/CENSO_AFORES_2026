@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DJ2HFZG6KD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-DJ2HFZG6KD');
+    </script> <!-- .Google tag -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Censo de Educación Financiera y Previsional 2026 | CONSAR</title>
+    <meta name="description"
+        content="Portal interactivo del Censo de Educación Financiera y Previsional (CEFP) de la CONSAR y Repositorio de Radiografías por Afore.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Noto+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="encabezado">
+        <div class="encabezado__inner">
+            <a href="#" class="encabezado__marca" aria-label="CONSAR - Inicio">
+                <img class="logo_consar" src="img/recursos/logo_consar.png"
+                    alt="Comisión Nacional del Sistema de Ahorro para el Retiro (CONSAR)">
+            </a>
+            <nav class="encabezado__nav" aria-label="Navegación principal">
+                <a href="#documento-censo" class="nav_link">Resultados CEFP</a>
+                <a href="#radiografias" class="nav_link nav_link--destacado">Radiografías por Afore</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Banner principal -->
+        <section class="bloque_principal" aria-label="Portada del Censo">
+            <img class="logo" src="img/recursos/banner_censo_2026.png"
+                alt="Censo de Educación Financiera y Previsional, Acciones 2026, Una década midiendo, aprendiendo y transformando">
+        </section>
+
+        <!-- Introducción -->
+        <section class="seccion_intro" aria-label="Introducción al CEFP">
+            <div class="primer_mensaje">
+                <p class="texto">
+                    La educación financiera y previsional constituye un pilar fundamental para el bienestar económico y
+                    social de la población mexicana.
+                </p>
+                <p class="texto">
+                    En este marco, la <strong>Comisión Nacional del Sistema de Ahorro para el Retiro (CONSAR)</strong>,
+                    en conjunto con las diez Administradoras de Fondos para el Retiro (Afores), realiza anualmente el
+                    <strong>Censo de Educación Financiera y Previsional (CEFP)</strong>, un ejercicio de seguimiento
+                    sistemático a las iniciativas que estas instituciones desarrollan para fortalecer las capacidades
+                    económico-financieras de las personas ahorradoras.
+                </p>
+                <p class="texto">
+                    El <strong>CEFP 2026</strong> ofrece un panorama general sobre el alcance, las características y la
+                    evolución de dichas acciones e identifica avances, áreas de oportunidad y tendencias relevantes en
+                    la promoción de una cultura previsional sólida e incluyente en el Sistema de Ahorro para el Retiro.
+                </p>
+            </div>
+        </section>
+
+        <!-- Visor interactivo propio del documento general (sin Heyzine ni terceros) -->
+        <section id="documento-censo" class="seccion_visor" aria-label="Visor de Resultados del Censo">
+            <div class="visor_card" id="censo-viewer" tabindex="0">
+                <div class="visor_toolbar">
+                    <div class="visor_toolbar__grupo">
+                        <span class="visor_badge">Documento oficial</span>
+                        <label class="visor_select_wrap" aria-label="Ir a sección del documento">
+                            <select id="censo-section-select" class="visor_select" disabled>
+                                <option value="1">Cargando contenido...</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="visor_toolbar__grupo visor_toolbar__controles">
+                        <button type="button" id="censo-thumbs-toggle" class="visor_btn" title="Ver miniaturas"
+                            aria-label="Ver miniaturas" aria-expanded="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                                <rect x="14" y="3" width="7" height="7" rx="1.5" />
+                                <rect x="3" y="14" width="7" height="7" rx="1.5" />
+                                <rect x="14" y="14" width="7" height="7" rx="1.5" />
+                            </svg>
+                            <span class="visor_btn__texto">Páginas</span>
+                        </button>
+
+                        <div class="visor_zoom_group" role="group" aria-label="Controles de acercamiento">
+                            <button type="button" id="censo-zoom-out" class="visor_btn visor_btn--icon"
+                                title="Alejar (-)" aria-label="Alejar">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <circle cx="11" cy="11" r="7" />
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                    <line x1="8" y1="11" x2="14" y2="11" />
+                                </svg>
+                            </button>
+                            <button type="button" id="censo-zoom-reset" class="visor_zoom_label"
+                                title="Ajustar al ancho">100%</button>
+                            <button type="button" id="censo-zoom-in" class="visor_btn visor_btn--icon"
+                                title="Acercar (+)" aria-label="Acercar">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <circle cx="11" cy="11" r="7" />
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                    <line x1="11" y1="8" x2="11" y2="14" />
+                                    <line x1="8" y1="11" x2="14" y2="11" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <button type="button" id="censo-fullscreen" class="visor_btn visor_btn--icon"
+                            title="Pantalla completa" aria-label="Pantalla completa">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <polyline points="15 3 21 3 21 9" />
+                                <polyline points="9 21 3 21 3 15" />
+                                <line x1="21" y1="3" x2="14" y2="10" />
+                                <line x1="3" y1="21" x2="10" y2="14" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Escenario del libro / página -->
+                <div class="visor_stage" id="censo-stage">
+                    <div class="visor_loader" id="censo-loader" role="status" aria-live="polite">
+                        <div class="visor_spinner"></div>
+                        <p class="visor_loader__texto" id="censo-loader-text">Cargando documento del CEFP...</p>
+                        <div class="visor_progress_track">
+                            <div class="visor_progress_bar" id="censo-progress-bar"></div>
+                        </div>
+                    </div>
+
+                    <button type="button" id="censo-prev-float" class="visor_nav_float visor_nav_float--prev"
+                        aria-label="Página anterior" title="Página anterior" disabled>
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <polyline points="15 18 9 12 15 6" />
+                        </svg>
+                    </button>
+
+                    <div class="visor_canvas_scroll" id="censo-canvas-scroll">
+                        <div class="flipbook_zoom_wrap" id="censo-zoom-wrap">
+                            <div class="flipbook_mount" id="censo-flipbook" aria-label="Libro interactivo del CEFP"></div>
+                        </div>
+                    </div>
+
+                    <span class="visor_flip_hint" id="censo-flip-hint">Arrastra una esquina o usa las flechas para hojear</span>
+
+                    <button type="button" id="censo-next-float" class="visor_nav_float visor_nav_float--next"
+                        aria-label="Página siguiente" title="Página siguiente" disabled>
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <polyline points="9 18 15 12 9 6" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Tira de miniaturas desplegable -->
+                <div class="visor_thumbs" id="censo-thumbs" hidden aria-label="Miniaturas del documento"></div>
+
+                <!-- Barra inferior de navegación -->
+                <div class="visor_footer">
+                    <button type="button" id="censo-prev" class="visor_btn" aria-label="Página anterior" disabled>
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <polyline points="15 18 9 12 15 6" />
+                        </svg>
+                        <span>Anterior</span>
+                    </button>
+
+                    <div class="visor_page_status">
+                        <span class="visor_page_counter" id="censo-page-counter">Portada · 1 / 24</span>
+                        <input type="range" id="censo-page-slider" class="visor_slider" min="1" max="24" value="1"
+                            aria-label="Seleccionar página" disabled>
+                    </div>
+
+                    <button type="button" id="censo-next" class="visor_btn" aria-label="Página siguiente" disabled>
+                        <span>Siguiente</span>
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <polyline points="9 18 15 12 9 6" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="boton">
+                <a href="radiografias_censo_2025/CENSO_RESULTADOS_2026.pdf" download="CENSO_RESULTADOS_2026.pdf"
+                    class="boton_descarga">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="7 10 12 15 17 10" />
+                        <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                    <span>Descargar archivo PDF</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Repositorio de Radiografías por Afore -->
+        <section id="radiografias" class="seccion_radiografias" aria-labelledby="titulo-radiografias">
+            <h2 id="titulo-radiografias" class="subtitulo_censo">Radiografías por Afore | Resultados 2026</h2>
+
+            <div class="segundo_mensaje">
+                <p class="texto">
+                    Por su parte, el <strong>Repositorio de Radiografías por Administradora</strong> es un espacio de
+                    consulta pública que pone a disposición de la ciudadanía los resultados del <strong>CEFP
+                        2026</strong>. Selecciona cualquier Afore para explorar su radiografía de forma interactiva o
+                    consultar su documento PDF oficial.
+                </p>
+            </div>
+
+            <div class="afores" id="afores-grid" role="list" aria-label="Listado de Administradoras de Fondos para el Retiro">
+                <!-- Generado dinámicamente desde data/afores-data.js con fallback semántico -->
+                <noscript>
+                    <p class="texto">Activa JavaScript para utilizar el explorador interactivo de Radiografías.</p>
+                </noscript>
+            </div>
+        </section>
+    </main>
+
+    <!-- Explorador interactivo de Radiografías con menú lateral izquierdo -->
+    <div class="rad_modal" id="radiografia-modal" role="dialog" aria-modal="true"
+        aria-labelledby="rad-active-title" hidden>
+        <div class="rad_shell">
+            <!-- Menú lateral izquierdo de Afores (clic y táctil) -->
+            <aside class="rad_sidebar" id="rad-sidebar" aria-label="Selector de Afores">
+                <div class="rad_sidebar__header">
+                    <div>
+                        <span class="rad_sidebar__eyebrow">CEFP · Radiografías</span>
+                        <h3 class="rad_sidebar__titulo">Selecciona una Afore</h3>
+                    </div>
+                    <button type="button" id="rad-sidebar-close" class="rad_icon_btn rad_sidebar__close"
+                        aria-label="Cerrar menú de Afores">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <line x1="18" y1="6" x2="6" y2="18" />
+                            <line x1="6" y1="6" x2="18" y2="18" />
+                        </svg>
+                    </button>
+                </div>
+
+                <nav class="rad_sidebar__list" id="rad-sidebar-list" aria-label="Cambiar de Afore"></nav>
+            </aside>
+
+            <!-- Fondo semitransparente para drawer móvil -->
+            <div class="rad_sidebar_backdrop" id="rad-sidebar-backdrop" hidden></div>
+
+            <!-- Panel principal de la Afore seleccionada -->
+            <div class="rad_main">
+                <header class="rad_topbar">
+                    <div class="rad_topbar__left">
+                        <button type="button" id="rad-menu-toggle" class="rad_menu_btn" aria-label="Abrir menú de Afores"
+                            aria-controls="rad-sidebar" aria-expanded="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <line x1="3" y1="6" x2="21" y2="6" />
+                                <line x1="3" y1="12" x2="21" y2="12" />
+                                <line x1="3" y1="18" x2="21" y2="18" />
+                            </svg>
+                            <span>Afores</span>
+                        </button>
+
+                        <div class="rad_topbar__brand">
+                            <div class="rad_topbar__logo_wrap">
+                                <img id="rad-active-logo" src="" alt="" class="rad_topbar__logo">
+                            </div>
+                            <div class="rad_topbar__titles">
+                                <span class="rad_topbar__kicker">Radiografía por Administradora</span>
+                                <h2 id="rad-active-title" class="rad_topbar__title">Afore</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rad_topbar__actions">
+                        <div class="rad_mode_switch" role="tablist" aria-label="Modo de visualización">
+                            <button type="button" role="tab" id="rad-tab-pdf" class="rad_mode_btn is-active"
+                                aria-selected="true" data-mode="pdf">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                    <polyline points="14 2 14 8 20 8" />
+                                </svg>
+                                <span>Ver PDF</span>
+                            </button>
+                            <button type="button" role="tab" id="rad-tab-interactive" class="rad_mode_btn"
+                                aria-selected="false" data-mode="interactive">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <rect x="3" y="3" width="7" height="9" rx="1.5" />
+                                    <rect x="14" y="3" width="7" height="5" rx="1.5" />
+                                    <rect x="14" y="12" width="7" height="9" rx="1.5" />
+                                    <rect x="3" y="16" width="7" height="5" rx="1.5" />
+                                </svg>
+                                <span>Interactiva</span>
+                            </button>
+                        </div>
+
+                        <a id="rad-download-btn" href="#" download class="rad_download_btn"
+                            title="Descargar PDF oficial">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
+                            </svg>
+                            <span>PDF</span>
+                        </a>
+
+                        <button type="button" id="rad-close-btn" class="rad_close_btn"
+                            aria-label="Cerrar radiografía" title="Cerrar (Esc)">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <line x1="18" y1="6" x2="6" y2="18" />
+                                <line x1="6" y1="6" x2="18" y2="18" />
+                            </svg>
+                        </button>
+                    </div>
+                </header>
+
+                <!-- Barra táctil rápida de Afores para móvil -->
+                <div class="rad_mobile_strip" id="rad-mobile-strip" aria-label="Cambio rápido de Afore"></div>
+
+                <!-- Contenido Vista Interactiva -->
+                <div class="rad_body" id="rad-interactive-view" role="tabpanel" aria-labelledby="rad-tab-interactive" hidden>
+                    <div class="rad_content_inner">
+                        <!-- Ficha técnica (KPIs) -->
+                        <section class="rad_kpis" id="rad-kpis" aria-label="Ficha técnica"></section>
+
+                        <!-- Distribución por ejes y subtemas + Perspectivas transversales -->
+                        <div class="rad_grid_detail">
+                            <section class="rad_panel rad_panel--tematica" aria-label="Distribución temática">
+                                <div class="rad_panel__header">
+                                    <div>
+                                        <h3 class="rad_panel__title">Distribución temática</h3>
+                                        <p class="rad_panel__subtitle">Acciones validadas por eje y subtema (31 subtemas evaluados)</p>
+                                    </div>
+                                    <button type="button" id="rad-sort-toggle" class="rad_chip_btn"
+                                        aria-pressed="false" title="Alternar orden">
+                                        Ordenar por acciones
+                                    </button>
+                                </div>
+
+                                <!-- Barra proporcional de los 3 ejes -->
+                                <div class="rad_axes_summary" id="rad-axes-summary"></div>
+
+                                <!-- Pestañas de filtro por eje -->
+                                <div class="rad_filter_tabs" id="rad-eje-filters" role="tablist"
+                                    aria-label="Filtrar por eje temático"></div>
+
+                                <!-- Lista de subtemas -->
+                                <div class="rad_subtemas_list" id="rad-subtemas-list"></div>
+                            </section>
+
+                            <section class="rad_panel rad_panel--perspectivas" aria-label="Perspectivas transversales">
+                                <div class="rad_panel__header">
+                                    <div>
+                                        <h3 class="rad_panel__title">Perspectivas transversales</h3>
+                                        <p class="rad_panel__subtitle" id="rad-persp-count">Cobertura de inclusión</p>
+                                    </div>
+                                </div>
+
+                                <div class="rad_perspectivas_list" id="rad-perspectivas-list"></div>
+
+                                <p class="rad_footnote">
+                                    Los indicadores en verde menta señalan las perspectivas de inclusión atendidas en el
+                                    CEFP 2026 y los indicadores en rojo las no cubiertas.
+                                </p>
+
+                                <div class="rad_pdf_cta">
+                                    <button type="button" id="rad-open-pdf-inline" class="rad_cta_btn">
+                                        Explorar ficha en PDF oficial
+                                    </button>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contenido Vista PDF Oficial (mismo motor local PDF.js) -->
+                <div class="rad_pdf_view" id="rad-pdf-view" role="tabpanel" aria-labelledby="rad-tab-pdf">
+                    <div class="rad_pdf_bar">
+                        <span class="rad_pdf_bar__label" id="rad-pdf-filename">Radiografía oficial PDF</span>
+                        <div class="visor_zoom_group">
+                            <button type="button" id="rad-pdf-zoom-out" class="visor_btn visor_btn--icon"
+                                aria-label="Alejar PDF" title="Alejar">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <circle cx="11" cy="11" r="7" />
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                    <line x1="8" y1="11" x2="14" y2="11" />
+                                </svg>
+                            </button>
+                            <button type="button" id="rad-pdf-zoom-reset" class="visor_zoom_label"
+                                title="Ajustar al contenedor">100%</button>
+                            <button type="button" id="rad-pdf-zoom-in" class="visor_btn visor_btn--icon"
+                                aria-label="Acercar PDF" title="Acercar">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <circle cx="11" cy="11" r="7" />
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                    <line x1="11" y1="8" x2="11" y2="14" />
+                                    <line x1="8" y1="11" x2="14" y2="11" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="rad_pdf_stage" id="rad-pdf-stage">
+                        <div class="visor_loader" id="rad-pdf-loader" hidden>
+                            <div class="visor_spinner"></div>
+                            <p class="visor_loader__texto" id="rad-pdf-loader-text">Cargando radiografía PDF...</p>
+                        </div>
+                        <div class="rad_pdf_scroll" id="rad-pdf-scroll">
+                            <canvas id="rad-pdf-canvas"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer_container">
+            <div class="footer_section redes_sociales">
+                <p class="texto_footer_titulo">Redes Sociales</p>
+                <div class="iconos_group">
+                    <a href="https://www.facebook.com/ConsarMexico" target="_blank" rel="noopener noreferrer"
+                        aria-label="Facebook CONSAR">
+                        <img src="img/redes/facebook.svg" class="icono_social" alt="Facebook">
+                    </a>
+                    <a href="https://www.instagram.com/consar_mx/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram CONSAR">
+                        <img src="img/redes/instagram.svg" class="icono_social" alt="Instagram">
+                    </a>
+                    <a href="https://www.linkedin.com/company/consar-mx/" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn CONSAR">
+                        <img src="img/redes/linkedin.svg" class="icono_social" alt="LinkedIn">
+                    </a>
+                    <a href="https://www.tiktok.com/@consar_mx" target="_blank" rel="noopener noreferrer"
+                        aria-label="TikTok CONSAR">
+                        <img src="img/redes/tiktok.svg" class="icono_social" alt="TikTok">
+                    </a>
+                    <a href="https://x.com/CONSAR_mx" target="_blank" rel="noopener noreferrer"
+                        aria-label="X (Twitter) CONSAR">
+                        <img src="img/redes/x.svg" class="icono_social" alt="X">
+                    </a>
+                    <a href="https://www.youtube.com/CONSARMexico" target="_blank" rel="noopener noreferrer"
+                        aria-label="YouTube CONSAR">
+                        <img src="img/redes/youtube.svg" class="icono_social" alt="YouTube">
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer_section contacto_sartel">
+                <p class="texto_footer_titulo">Comunícate a SARTEL</p>
+                <a href="tel:5513285000" class="numero_telefono">55 1328 5000</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
