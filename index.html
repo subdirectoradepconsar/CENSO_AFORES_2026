@@ -13,9 +13,9 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Censo de Educación Financiera y Previsional 2026 | CONSAR</title>
+    <title>Censo de Educación Financiera y Previsional 2025 | CONSAR</title>
     <meta name="description"
-        content="Portal interactivo del Censo de Educación Financiera y Previsional (CEFP) de la CONSAR y Repositorio de Radiografías por Afore.">
+        content="Portal interactivo del Censo de Educación Financiera y Previsional (CEFP) 2025 de la CONSAR y Repositorio de Radiografías por Afore.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,8 +42,8 @@
     <main>
         <!-- Banner principal -->
         <section class="bloque_principal" aria-label="Portada del Censo">
-            <img class="logo" src="img/recursos/banner_censo_2026.png"
-                alt="Censo de Educación Financiera y Previsional, Acciones 2026, Una década midiendo, aprendiendo y transformando">
+            <img class="logo" src="img/recursos/banner_censo.svg"
+                alt="Censo de Educación Financiera y Previsional, Acciones 2025, Una década midiendo, aprendiendo y transformando">
         </section>
 
         <!-- Introducción -->
@@ -61,72 +61,16 @@
                     económico-financieras de las personas ahorradoras.
                 </p>
                 <p class="texto">
-                    El <strong>CEFP 2026</strong> ofrece un panorama general sobre el alcance, las características y la
+                    El <strong>CEFP 2025</strong> ofrece un panorama general sobre el alcance, las características y la
                     evolución de dichas acciones e identifica avances, áreas de oportunidad y tendencias relevantes en
                     la promoción de una cultura previsional sólida e incluyente en el Sistema de Ahorro para el Retiro.
                 </p>
             </div>
         </section>
 
-        <!-- Visor interactivo propio del documento general (sin Heyzine ni terceros) -->
+        <!-- Visor interactivo propio del documento general -->
         <section id="documento-censo" class="seccion_visor" aria-label="Visor de Resultados del Censo">
             <div class="visor_card" id="censo-viewer" tabindex="0">
-                <div class="visor_toolbar">
-                    <div class="visor_toolbar__grupo">
-                        <span class="visor_badge">Documento oficial</span>
-                        <label class="visor_select_wrap" aria-label="Ir a sección del documento">
-                            <select id="censo-section-select" class="visor_select" disabled>
-                                <option value="1">Cargando contenido...</option>
-                            </select>
-                        </label>
-                    </div>
-
-                    <div class="visor_toolbar__grupo visor_toolbar__controles">
-                        <button type="button" id="censo-thumbs-toggle" class="visor_btn" title="Ver miniaturas"
-                            aria-label="Ver miniaturas" aria-expanded="false">
-                            <svg viewBox="0 0 24 24" aria-hidden="true">
-                                <rect x="3" y="3" width="7" height="7" rx="1.5" />
-                                <rect x="14" y="3" width="7" height="7" rx="1.5" />
-                                <rect x="3" y="14" width="7" height="7" rx="1.5" />
-                                <rect x="14" y="14" width="7" height="7" rx="1.5" />
-                            </svg>
-                            <span class="visor_btn__texto">Páginas</span>
-                        </button>
-
-                        <div class="visor_zoom_group" role="group" aria-label="Controles de acercamiento">
-                            <button type="button" id="censo-zoom-out" class="visor_btn visor_btn--icon"
-                                title="Alejar (-)" aria-label="Alejar">
-                                <svg viewBox="0 0 24 24" aria-hidden="true">
-                                    <circle cx="11" cy="11" r="7" />
-                                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                                    <line x1="8" y1="11" x2="14" y2="11" />
-                                </svg>
-                            </button>
-                            <button type="button" id="censo-zoom-reset" class="visor_zoom_label"
-                                title="Ajustar al ancho">100%</button>
-                            <button type="button" id="censo-zoom-in" class="visor_btn visor_btn--icon"
-                                title="Acercar (+)" aria-label="Acercar">
-                                <svg viewBox="0 0 24 24" aria-hidden="true">
-                                    <circle cx="11" cy="11" r="7" />
-                                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                                    <line x1="11" y1="8" x2="11" y2="14" />
-                                    <line x1="8" y1="11" x2="14" y2="11" />
-                                </svg>
-                            </button>
-                        </div>
-
-                        <button type="button" id="censo-fullscreen" class="visor_btn visor_btn--icon"
-                            title="Pantalla completa" aria-label="Pantalla completa">
-                            <svg viewBox="0 0 24 24" aria-hidden="true">
-                                <polyline points="15 3 21 3 21 9" />
-                                <polyline points="9 21 3 21 3 15" />
-                                <line x1="21" y1="3" x2="14" y2="10" />
-                                <line x1="3" y1="21" x2="10" y2="14" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-
                 <!-- Escenario del libro / página -->
                 <div class="visor_stage" id="censo-stage">
                     <div class="visor_loader" id="censo-loader" role="status" aria-live="polite">
@@ -150,8 +94,6 @@
                         </div>
                     </div>
 
-                    <span class="visor_flip_hint" id="censo-flip-hint">Arrastra una esquina o usa las flechas para hojear</span>
-
                     <button type="button" id="censo-next-float" class="visor_nav_float visor_nav_float--next"
                         aria-label="Página siguiente" title="Página siguiente" disabled>
                         <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -163,32 +105,86 @@
                 <!-- Tira de miniaturas desplegable -->
                 <div class="visor_thumbs" id="censo-thumbs" hidden aria-label="Miniaturas del documento"></div>
 
-                <!-- Barra inferior de navegación -->
+                <!-- Barra inferior minimalista de navegación y controles -->
                 <div class="visor_footer">
-                    <button type="button" id="censo-prev" class="visor_btn" aria-label="Página anterior" disabled>
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <polyline points="15 18 9 12 15 6" />
-                        </svg>
-                        <span>Anterior</span>
-                    </button>
-
-                    <div class="visor_page_status">
-                        <span class="visor_page_counter" id="censo-page-counter">Portada · 1 / 24</span>
-                        <input type="range" id="censo-page-slider" class="visor_slider" min="1" max="24" value="1"
-                            aria-label="Seleccionar página" disabled>
+                    <div class="visor_footer__left">
+                        <label class="visor_select_wrap" aria-label="Ir a sección del documento">
+                            <select id="censo-section-select" class="visor_select" disabled>
+                                <option value="1">Cargando contenido...</option>
+                            </select>
+                        </label>
                     </div>
 
-                    <button type="button" id="censo-next" class="visor_btn" aria-label="Página siguiente" disabled>
-                        <span>Siguiente</span>
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <polyline points="9 18 15 12 9 6" />
-                        </svg>
-                    </button>
+                    <div class="visor_footer__center">
+                        <button type="button" id="censo-prev" class="visor_btn visor_btn--icon" aria-label="Página anterior"
+                            title="Página anterior" disabled>
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <polyline points="15 18 9 12 15 6" />
+                            </svg>
+                        </button>
+
+                        <div class="visor_page_status">
+                            <span class="visor_page_counter" id="censo-page-counter">1 / 24</span>
+                            <input type="range" id="censo-page-slider" class="visor_slider" min="1" max="24" value="1"
+                                aria-label="Seleccionar página" disabled>
+                        </div>
+
+                        <button type="button" id="censo-next" class="visor_btn visor_btn--icon" aria-label="Página siguiente"
+                            title="Página siguiente" disabled>
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <polyline points="9 18 15 12 9 6" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="visor_footer__right">
+                        <button type="button" id="censo-thumbs-toggle" class="visor_btn visor_btn--icon"
+                            title="Ver miniaturas" aria-label="Ver miniaturas" aria-expanded="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                                <rect x="14" y="3" width="7" height="7" rx="1.5" />
+                                <rect x="3" y="14" width="7" height="7" rx="1.5" />
+                                <rect x="14" y="14" width="7" height="7" rx="1.5" />
+                            </svg>
+                        </button>
+
+                        <div class="visor_zoom_group" role="group" aria-label="Controles de acercamiento">
+                            <button type="button" id="censo-zoom-out" class="visor_btn visor_btn--icon"
+                                title="Alejar (-)" aria-label="Alejar">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <circle cx="11" cy="11" r="7" />
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                    <line x1="8" y1="11" x2="14" y2="11" />
+                                </svg>
+                            </button>
+                            <button type="button" id="censo-zoom-reset" class="visor_zoom_label"
+                                title="Restablecer zoom">100%</button>
+                            <button type="button" id="censo-zoom-in" class="visor_btn visor_btn--icon"
+                                title="Acercar (+)" aria-label="Acercar">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <circle cx="11" cy="11" r="7" />
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                    <line x1="11" y1="8" x2="11" y2="14" />
+                                    <line x1="8" y1="11" x2="14" y2="11" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <button type="button" id="censo-fullscreen" class="visor_btn visor_btn--icon"
+                            title="Pantalla completa" aria-label="Pantalla completa">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <polyline points="15 3 21 3 21 9" />
+                                <polyline points="9 21 3 21 3 15" />
+                                <line x1="21" y1="3" x2="14" y2="10" />
+                                <line x1="3" y1="21" x2="10" y2="14" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
 
             <div class="boton">
-                <a href="radiografias_censo_2025/CENSO_RESULTADOS_2026.pdf" download="CENSO_RESULTADOS_2026.pdf"
+                <a href="radiografias_censo_2025/CENSO_RESULTADOS_2026.pdf" download="CENSO_RESULTADOS_2025.pdf"
                     class="boton_descarga">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -202,13 +198,13 @@
 
         <!-- Repositorio de Radiografías por Afore -->
         <section id="radiografias" class="seccion_radiografias" aria-labelledby="titulo-radiografias">
-            <h2 id="titulo-radiografias" class="subtitulo_censo">Radiografías por Afore | Resultados 2026</h2>
+            <h2 id="titulo-radiografias" class="subtitulo_censo">Radiografías por Afore | Resultados 2025</h2>
 
             <div class="segundo_mensaje">
                 <p class="texto">
                     Por su parte, el <strong>Repositorio de Radiografías por Administradora</strong> es un espacio de
                     consulta pública que pone a disposición de la ciudadanía los resultados del <strong>CEFP
-                        2026</strong>. Selecciona cualquier Afore para explorar su radiografía de forma interactiva o
+                        2025</strong>. Selecciona cualquier Afore para explorar su radiografía de forma interactiva o
                     consultar su documento PDF oficial.
                 </p>
             </div>
@@ -226,21 +222,41 @@
             <div class="historico_card">
                 <div class="historico_card__contenido">
                     <span class="historico_card__eyebrow">Ediciones anteriores</span>
-                    <h2 id="titulo-historico" class="historico_card__titulo">Accede a la edición de 2025</h2>
+                    <h2 id="titulo-historico" class="historico_card__titulo">Accede a las ediciones de 2024, 2023 y 2022</h2>
                     <p class="historico_card__texto">
-                        Consulta los resultados y radiografías de la edición 2025 del Censo de Educación Financiera y
-                        Previsional en el portal oficial de la CONSAR.
+                        Consulta los resultados de ediciones anteriores del Censo de Educación Financiera y Previsional
+                        en el portal oficial de la CONSAR.
                     </p>
                 </div>
-                <a href="https://www.consar.gob.mx/gobmx/aplicativo/censo_afores/index.html" target="_blank"
-                    rel="noopener noreferrer" class="boton_descarga historico_card__btn">
-                    <span>Ver edición 2025</span>
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                        <polyline points="15 3 21 3 21 9" />
-                        <line x1="10" y1="14" x2="21" y2="3" />
-                    </svg>
-                </a>
+                <div class="historico_card__acciones">
+                    <a href="https://www.gob.mx/consar/articulos/la-consar-presenta-los-resultados-del-censo-de-educacion-financiera-y-previsional-2024-398131?idiom=es"
+                        target="_blank" rel="noopener noreferrer" class="boton_descarga historico_card__btn">
+                        <span>Ver edición 2024</span>
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" y1="14" x2="21" y2="3" />
+                        </svg>
+                    </a>
+                    <a href="https://www.gob.mx/consar/articulos/resultados-del-censo-de-educacion-financiera-y-previsional-de-las-afores-al-cierre-2023-365167"
+                        target="_blank" rel="noopener noreferrer" class="boton_descarga historico_card__btn historico_card__btn--secundario">
+                        <span>Ver edición 2023</span>
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" y1="14" x2="21" y2="3" />
+                        </svg>
+                    </a>
+                    <a href="https://www.gob.mx/consar/prensa/resultados-del-censo-de-educacion-financiera-y-previsional-de-las-afores-cierre-2022-335945?idiom=fr"
+                        target="_blank" rel="noopener noreferrer" class="boton_descarga historico_card__btn historico_card__btn--secundario">
+                        <span>Ver edición 2022</span>
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" y1="14" x2="21" y2="3" />
+                        </svg>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
@@ -384,7 +400,7 @@
 
                                 <p class="rad_footnote">
                                     Los indicadores en verde menta señalan las perspectivas de inclusión atendidas en el
-                                    CEFP 2026 y los indicadores en rojo las no cubiertas.
+                                    CEFP 2025 y los indicadores en rojo las no cubiertas.
                                 </p>
 
                                 <div class="rad_pdf_cta">

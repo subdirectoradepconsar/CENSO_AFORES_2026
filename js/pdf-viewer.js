@@ -229,24 +229,24 @@ export class CensoPdfViewer {
     computePageDimensions() {
         const rect = this.el.stage.getBoundingClientRect();
         const isPortraitMode = rect.width <= 760;
-        const padX = isPortraitMode ? 76 : 136;
-        const padY = 64;
+        const padX = isPortraitMode ? 56 : 108;
+        const padY = 36;
 
         const availW = Math.max(220, rect.width - padX);
         const availH = Math.max(280, rect.height - padY);
 
         const maxPageW = isPortraitMode ? availW : availW / 2;
-        let pageH = Math.min(availH, maxPageW / this.pageAspect);
-        let pageW = pageH * this.pageAspect;
+        let pageH = Math.floor(Math.min(availH, maxPageW / this.pageAspect));
+        let pageW = Math.round(pageH * this.pageAspect);
 
         if (pageW > maxPageW) {
-            pageW = maxPageW;
-            pageH = pageW / this.pageAspect;
+            pageW = Math.floor(maxPageW);
+            pageH = Math.round(pageW / this.pageAspect);
         }
 
         return {
-            width: Math.max(200, Math.floor(pageW)),
-            height: Math.max(260, Math.floor(pageH)),
+            width: Math.max(200, pageW),
+            height: Math.max(260, pageH),
             isPortraitMode
         };
     }
@@ -287,17 +287,17 @@ export class CensoPdfViewer {
             height,
             size: 'fixed',
             minWidth: 200,
-            maxWidth: 720,
+            maxWidth: 780,
             minHeight: 260,
-            maxHeight: 920,
+            maxHeight: 980,
             showCover: true,
             drawShadow: true,
-            maxShadowOpacity: 0.45,
-            flippingTime: 720,
+            maxShadowOpacity: 0.18,
+            flippingTime: 650,
             usePortrait: isPortraitMode,
             startZIndex: 2,
             autoSize: true,
-            showPageCorners: true,
+            showPageCorners: false,
             mobileScrollSupport: false,
             useMouseEvents: true,
             clickEventForward: false,
@@ -368,8 +368,8 @@ export class CensoPdfViewer {
         try {
             const page = await this.doc.getPage(pdfPageNum);
             const baseVp = page.getViewport({ scale: 1 });
-            // Render nítido (~1180px alto por página, ideal hasta 200% zoom)
-            const targetHeight = 1180;
+            // Escala exacta 2x para 792pt (1584px alto), garantizando mitades enteras sin costuras ni recortes
+            const targetHeight = 1584;
             const scale = targetHeight / baseVp.height;
             const vp = page.getViewport({ scale });
 
@@ -377,30 +377,32 @@ export class CensoPdfViewer {
 
             if (targets.length === 1 && targets[0].half === 'full') {
                 const canvas = targets[0].canvas;
-                canvas.width = Math.floor(vp.width);
-                canvas.height = Math.floor(vp.height);
+                canvas.width = Math.round(vp.width);
+                canvas.height = Math.round(vp.height);
                 await page.render({
                     canvasContext: canvas.getContext('2d'),
                     viewport: vp
                 }).promise;
                 targets[0].el.classList.add('is-rendered');
             } else {
+                const fullW = Math.round(vp.width / 2) * 2;
+                const fullH = Math.round(vp.height);
                 const off = document.createElement('canvas');
-                off.width = Math.floor(vp.width);
-                off.height = Math.floor(vp.height);
+                off.width = fullW;
+                off.height = fullH;
                 await page.render({
                     canvasContext: off.getContext('2d'),
                     viewport: vp
                 }).promise;
 
-                const halfW = Math.floor(off.width / 2);
+                const halfW = fullW / 2;
                 for (const t of targets) {
                     t.canvas.width = halfW;
-                    t.canvas.height = off.height;
+                    t.canvas.height = fullH;
                     const sx = t.half === 'right' ? halfW : 0;
                     t.canvas
                         .getContext('2d')
-                        .drawImage(off, sx, 0, halfW, off.height, 0, 0, halfW, off.height);
+                        .drawImage(off, sx, 0, halfW, fullH, 0, 0, halfW, fullH);
                     t.el.classList.add('is-rendered');
                 }
             }
@@ -560,7 +562,7 @@ export class CensoPdfViewer {
         this.el.loader.hidden = true;
         this.el.prevFloat.hidden = true;
         this.el.nextFloat.hidden = true;
-        this.el.hint.hidden = true;
+        if (this.el.hint) this.el.hint.hidden = true;
         this.el.scroll.innerHTML = `
             <div class="visor_fallback_box">
                 <iframe src="${this.pdfUrl}" title="Resultados del Censo de Educación Financiera y Previsional"></iframe>

@@ -1,7 +1,7 @@
 // Datos oficiales extraídos de las Radiografías CEFP (CONSAR)
 export const CENSO_CONFIG = {
   pdfGeneral: 'radiografias_censo_2025/CENSO_RESULTADOS_2026.pdf',
-  nombreDescargaGeneral: 'CENSO_RESULTADOS_2026.pdf',
+  nombreDescargaGeneral: 'CENSO_RESULTADOS_2025.pdf',
   totalAccionesSistema: 3099,
   seccionesIndice: [
     { pagina: 1, titulo: 'Portada' },
