@@ -34,7 +34,7 @@ export const AFORES_DATA = [
     "id": "azteca",
     "nombre": "Afore Azteca",
     "nombreCorto": "Azteca",
-    "logo": "img/logos_afores/afore_azteca.webp",
+    "logo": "img/logos_afores/afore_azteca.jpg",
     "pdf": "radiografias_censo_2025/radiografia_azteca.pdf",
     "ficha": {
       "totalAcciones": 390,
@@ -207,7 +207,7 @@ export const AFORES_DATA = [
     "id": "banamex",
     "nombre": "Afore Banamex",
     "nombreCorto": "Banamex",
-    "logo": "img/logos_afores/afore_banamex.webp",
+    "logo": "img/logos_afores/afore_banamex.jpg",
     "pdf": "radiografias_censo_2025/radiografia_banamex.pdf",
     "ficha": {
       "totalAcciones": 204,
@@ -380,7 +380,7 @@ export const AFORES_DATA = [
     "id": "coppel",
     "nombre": "Afore Coppel",
     "nombreCorto": "Coppel",
-    "logo": "img/logos_afores/afore_coppel.webp",
+    "logo": "img/logos_afores/afore_coppel.jpg",
     "pdf": "radiografias_censo_2025/radiografia_coppel.pdf",
     "ficha": {
       "totalAcciones": 302,
@@ -553,7 +553,7 @@ export const AFORES_DATA = [
     "id": "inbursa",
     "nombre": "Afore Inbursa",
     "nombreCorto": "Inbursa",
-    "logo": "img/logos_afores/afore_inbursa.webp",
+    "logo": "img/logos_afores/afore_inbursa.jpg",
     "pdf": "radiografias_censo_2025/radiografia_inbursa.pdf",
     "ficha": {
       "totalAcciones": 59,
@@ -726,7 +726,7 @@ export const AFORES_DATA = [
     "id": "invercap",
     "nombre": "Afore InverCap",
     "nombreCorto": "InverCap",
-    "logo": "img/logos_afores/afore_invercap.webp",
+    "logo": "img/logos_afores/afore_invercap.jpg",
     "pdf": "radiografias_censo_2025/radiografia_invercap.pdf",
     "ficha": {
       "totalAcciones": 100,
@@ -899,7 +899,7 @@ export const AFORES_DATA = [
     "id": "pensionissste",
     "nombre": "Afore PENSIONISSSTE",
     "nombreCorto": "PENSIONISSSTE",
-    "logo": "img/logos_afores/afore_pensionissste.webp",
+    "logo": "img/logos_afores/afore_pensionissste.jpg",
     "pdf": "radiografias_censo_2025/radiografia_pensionissste.pdf",
     "ficha": {
       "totalAcciones": 531,
@@ -1072,7 +1072,7 @@ export const AFORES_DATA = [
     "id": "principal",
     "nombre": "Afore Principal",
     "nombreCorto": "Principal",
-    "logo": "img/logos_afores/afore_principal.webp",
+    "logo": "img/logos_afores/afore_principal.jpg",
     "pdf": "radiografias_censo_2025/radiografia_principal.pdf",
     "ficha": {
       "totalAcciones": 119,
@@ -1245,7 +1245,7 @@ export const AFORES_DATA = [
     "id": "profuturo",
     "nombre": "Afore Profuturo",
     "nombreCorto": "Profuturo",
-    "logo": "img/logos_afores/afore_profuturo.webp",
+    "logo": "img/logos_afores/afore_profuturo.jpg",
     "pdf": "radiografias_censo_2025/radiografia_profuturo.pdf",
     "ficha": {
       "totalAcciones": 477,
@@ -1418,7 +1418,7 @@ export const AFORES_DATA = [
     "id": "sura",
     "nombre": "Afore SURA",
     "nombreCorto": "SURA",
-    "logo": "img/logos_afores/afore_sura.webp",
+    "logo": "img/logos_afores/afore_sura.jpg",
     "pdf": "radiografias_censo_2025/radiografia_sura.pdf",
     "ficha": {
       "totalAcciones": 270,
@@ -1591,7 +1591,7 @@ export const AFORES_DATA = [
     "id": "xxi-banorte",
     "nombre": "Afore XXI Banorte",
     "nombreCorto": "XXI Banorte",
-    "logo": "img/logos_afores/afore_21banorte.webp",
+    "logo": "img/logos_afores/afore_21banorte.jpg",
     "pdf": "radiografias_censo_2025/radiografia_21_banorte.pdf",
     "ficha": {
       "totalAcciones": 647,
