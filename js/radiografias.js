@@ -1,4 +1,4 @@
-import { AFORES_DATA, CENSO_CONFIG, PERSPECTIVAS_LISTA } from '../data/afores-data.js';
+import { AFORES_DATA, CENSO_CONFIG, PERSPECTIVAS_LISTA } from '../data/afores-data.js?v=2025';
 
 export class RadiografiasExplorer {
     constructor({ pdfViewer }) {

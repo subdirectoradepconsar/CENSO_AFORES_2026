@@ -1,8 +1,8 @@
-import * as pdfjsLib from '../vendor/pdfjs/pdf.min.js';
-import { PageFlip } from '../vendor/page-flip/page-flip.module.js';
+import * as pdfjsLib from '../vendor/pdfjs/pdf.min.js?v=2025';
+import { PageFlip } from '../vendor/page-flip/page-flip.module.js?v=2025';
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
-    '../vendor/pdfjs/pdf.worker.min.js',
+    '../vendor/pdfjs/pdf.worker.min.js?v=2025',
     import.meta.url
 ).href;
 
